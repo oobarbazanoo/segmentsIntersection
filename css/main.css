@@ -5,9 +5,7 @@ input[type="tel"],
 input[type="select"]
 {
     max-width: 100px;
-    margin:0;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin:0 auto;
 }
 
 .container-fluid
@@ -37,3 +35,9 @@ input[type="select"]
 {
     display: inline-block !important;
 }
+
+.top5px
+{margin-top: 5px !important;}
+
+.bottom5px
+{margin-bottom: 5px !important;}
