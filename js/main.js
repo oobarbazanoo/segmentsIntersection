@@ -12,23 +12,39 @@ $(function()
             from2 = $("#from2").val(),
             to2 = $("#to2").val();
 
-        var from, to;
-        for(var i = from1; i <= to1; i++)
+       from1 = parseFloat(from1);
+       to1 = parseFloat(to1);
+       from2 = parseFloat(from2);
+       to2 = parseFloat(to2);
+
+        if(from1 > to1)
         {
-            if(!from && belongs(i, from2, to2))
-                {from = i;}
-            else if(from && belongs(i, from2, to2))
-                {to = i;}
+            var temp = to1;
+            to1 = from1;
+            from1 = temp;
         }
 
-        if(from)
-            {$("#showAnswer").text("Intersection: " + "[" + from + "," + to + "]");}
+        if(from2 > to2)
+        {
+            var temp = to2;
+            to2 = from2;
+            from2 = temp;
+        }
+
+        if((from2 > to1) || (from1 > to2))
+            {
+                $("#showAnswer").text("Intersection: " + EMPTY_SET);
+            }
         else
-            {$("#showAnswer").text("Intersection: " + EMPTY_SET);}
+            {$("#showAnswer").text("Intersection: " + "[" + max(from1, from2) + "," + min(to1, to2) + "]");}
+
     });
 
 
-    function belongs(point, from, to)
-    {return (from <= point) && (point <= to);}
+    function max(x, y)
+    {return (x>y)?x:y;}
+
+    function min(x, y)
+    {return (x<y)?x:y;}
 
 })
