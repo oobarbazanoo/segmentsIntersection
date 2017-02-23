@@ -2,7 +2,8 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
-input[type="select"]
+input[type="select"],
+input[type="number"]
 {
     max-width: 100px;
     margin:0 auto;

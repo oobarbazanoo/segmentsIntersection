@@ -36,7 +36,7 @@ $(function()
                 $("#showAnswer").text("Intersection: " + EMPTY_SET);
             }
         else
-            {$("#showAnswer").text("Intersection: " + "[" + max(from1, from2) + "," + min(to1, to2) + "]");}
+            {$("#showAnswer").text("Intersection: " + "[" + max(from1, from2) + "; " + min(to1, to2) + "]");}
 
     });
 
